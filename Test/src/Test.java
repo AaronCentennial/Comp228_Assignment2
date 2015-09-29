@@ -7,7 +7,7 @@ import java.security.SecureRandom;
 
 /*
 	Question Class
-		Stores the question
+		Stores the question, answers and the correct answer
  */
 class Question{
 	private String _question;
@@ -31,18 +31,20 @@ class Question{
 	public int get_correctAnswer(){return this._correctAnswer;}
 }
 
+
+
+/*
+	The test class handles the returning of questions, and messages checking
+	answers and answers
+ */
 public class Test {
 	private ArrayList<Question> _testQuestions;
-	private String[] _rightAnswerMsgs;
-	private String[] _wrongAnswerMsgs;
 	private SecureRandom _sRandom;
 	private String _name;
 	private int _numCorrectAns;
 
 	Test(String name){
 		this._testQuestions=new ArrayList<Question>();
-		this._rightAnswerMsgs=new String[]{"Excellent!","Good!", "Keep up the good work!", "Nice work!"};
-		this._wrongAnswerMsgs=new String[]{"No. Please try again", "Wrong. Try once more", "Don't give up!", "No. Keep trying..."};
 		this._sRandom=new SecureRandom();
 		this._name=name;
 		this._numCorrectAns=0;
@@ -88,8 +90,35 @@ public class Test {
 	}
 
 	public String simulateMessage(boolean goodMessage){
-		if (goodMessage){return "\nCorrect! "+this._rightAnswerMsgs[this._sRandom.nextInt(4)];}
-		else {return "\nSorry: "+this._wrongAnswerMsgs[this._sRandom.nextInt(4)];}
+		int randNum=this._sRandom.nextInt(4);
+		if (goodMessage){
+			switch (randNum){
+				case 0:
+					return "Excellent!";
+				case 1:
+					return "Good!";
+				case 2:
+					return "Keep up the good work!";
+				case 3:
+					return "Nice work!";
+				default:
+					return "err";
+			}
+		}
+		else {
+			switch (randNum){
+				case 0:
+					return "No. Please try again";
+				case 1:
+					return "Wrong. Try once more";
+				case 2:
+					return "Don't give up!";
+				case 3:
+					return "No. Keep trying...";
+				default:
+					return "err";
+			}
+		}
 	}
 
 }
