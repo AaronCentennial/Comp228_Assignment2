@@ -26,3 +26,11 @@ Use a switch statement to issue the responses, as in the following code:
 At the end of the test display the number of correct and incorrect answers, and the percentage of the correct answers.
 
 Your main class will simply create a Test object and start the test by calling inputAnswer method.
+
+---
+
+Exercise 2: (3 marks)
+ 
+Design a **Die** class with one instance variable to hold an integer value (from 1 to 6). Include a constructor that randomly assigns a value to a die object. Also, include a method in the class to return a die’s value.
+
+Use this class to create a simple dice game in which the user chooses a number between 2 and 12. The user rolls two dice up to 3 times. If the number chosen by the user comes up, the user wins and the game ends. If the number does not come up within three rolls, the computer wins.
