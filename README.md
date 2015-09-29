@@ -29,7 +29,7 @@ Your main class will simply create a Test object and start the test by calling i
 
 ---
 
-Exercise 2: (3 marks)
+## Exercise 2:
  
 Design a **Die** class with one instance variable to hold an integer value (from 1 to 6). Include a constructor that randomly assigns a value to a die object. Also, include a method in the class to return a die’s value.
 
